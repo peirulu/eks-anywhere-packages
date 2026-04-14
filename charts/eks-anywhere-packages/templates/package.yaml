@@ -1,6 +1,7 @@
 {{- $render := include "eks-anywhere-packages.rendertype" . }}
 {{- $namespace := printf "%s-%s" "eksa-packages" .Values.clusterName -}}
 {{- $mgmtNamespace := printf "%s-%s" "eksa-packages" .Values.managementClusterName -}}
+{{- if not .Values.skipCRs }}
 {{- if eq $render "controller" }}
 {{- if not (lookup "packages.eks.amazonaws.com/v1alpha1" "Package" $namespace "eks-anywhere-packages") }}
 apiVersion: packages.eks.amazonaws.com/v1alpha1
@@ -40,5 +41,6 @@ spec:
     sourceRegistry: {{ .Values.sourceRegistry }}
     defaultRegistry: {{ .Values.defaultRegistry }}
     defaultImageRegistry: {{ .Values.defaultImageRegistry }} 
+{{- end }}
 {{- end }}
 

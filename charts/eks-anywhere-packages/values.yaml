@@ -125,3 +125,7 @@ awsSecret:
   # -- Config overrides other awsSecret fields
   config: ""
 workloadOnly: false
+# -- skipCRs skips creation of Package and PackageBundleController custom resources.
+# Used for two-phase install: first install infrastructure (skipCRs=true),
+# wait for webhook readiness, then upgrade with CRs (skipCRs=false).
+skipCRs: false
