@@ -1,7 +1,7 @@
 # This info is hardcoded and comes from https://github.com/aws/eks-anywhere-build-tooling
-name: "v1-29-1001"
-kubernetesVersion: "1.29"
-minControllerVersion: "v0.3.2"
+name: "v1-36-1001"
+kubernetesVersion: "1.36"
+minControllerVersion: "v0.4.4"
 packages:
   - org: aws
     projects:
@@ -72,7 +72,7 @@ packages:
         repository: cluster-autoscaler/charts/cluster-autoscaler
         registry: 067575901363.dkr.ecr.us-west-2.amazonaws.com
         versions:
-            - name: 9.55.0-1.29-3726eca575d05fdd2b9cdcb1fd32f4e0cc3441ba
+            - name: 9.55.0-1.35-3726eca575d05fdd2b9cdcb1fd32f4e0cc3441ba
   - org: kubernetes-sigs
     projects:
       - name: metrics-server
